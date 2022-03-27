@@ -12,5 +12,11 @@
       <image class="btn-img" src="{{bimgA}}" mode="heightFix"></image>
       <text class="btn-name">历史记录</text>
     </navigator>
+
+    <navigator class="grid-item" url="{{toDocs}}" open-type="navigate">
+      <!-- 后续要改为导航栏，才可以跳转 -->
+      <image class="btn-img" src="{{bimgB}}" mode="heightFix"></image>
+      <text class="btn-name">使用手册</text>
+    </navigator>
   </view>
 </view>

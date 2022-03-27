@@ -12,8 +12,8 @@ Page({
     avatar: "https://cdn.jsdelivr.net/gh/Cuber-final/myblog_statics@master/mini_pro/user.1xn7dwcjf000.webp",
     toHistory: "",
     wx_name: app.globals.user_name,
-    toHistory: "/pages/userCenter/history",
-    toDocs: "/pages/userCenter/docs"
+    toHistory: "/explore/pages/history/index",
+    toDocs: "/explore/pages/docs/index"
   },
 
   /**

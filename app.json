@@ -2,10 +2,19 @@
     "pages": [
         "pages/home/index",
         "pages/userCenter/index",
-        "pages/userCenter/history",
-        "pages/search/idnex",
-        "pages/userCenter/docs"
+        "pages/search/idnex"
     ],
+
+    "subPackages": [
+        {
+            "root": "explore",
+            "pages": [
+                "pages/history/index",
+                "pages/docs/index"
+            ]
+        }
+    ],
+
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#90be6d",

@@ -1,4 +1,4 @@
-// pages/userCenter/docs.js
+// explore/pages/docs/index.js
 Page({
 
   /**

@@ -1,20 +1,18 @@
-// pages/userCenter/history.js
-const app = getApp();
+// explore/pages/history/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    wx_name: app.globals.user_name,
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let wx_name = app.globals.user_name;
-    console.log(wx_name);
+
   },
 
   /**
