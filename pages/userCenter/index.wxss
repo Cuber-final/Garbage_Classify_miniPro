@@ -1,0 +1,52 @@
+/* pages/userCenter/index.wxss */
+.avatar-box{
+  height: 300rpx;
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: cadetblue;
+}
+
+
+.card{
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .icons{
+  height: 120rpx;
+  width: 120rpx;
+}
+
+.card .text-box{
+  text-align: center;
+  font-size: 30rpx;
+  font-style: italic;
+  color: #90be6d;
+}
+
+
+.grid-list{
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-item{
+  width: 33.33%;
+  height: 240rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.grid-item image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.grid-item text{
+  font-size: 24rpx;
+}

@@ -1,0 +1,16 @@
+<!--pages/userCenter/index.wxml-->
+<view class="container" style="width: 750rpx; display: flex; box-sizing: border-box">
+  <view class="avatar-box">
+    <view class="card">
+      <image class="icons" src="{{avatar}}" mode="heightFix"></image>
+      <view class="text-box">{{wx_name}}</view>
+    </view>
+  </view>
+  <view class="grid-list">
+    <navigator class="grid-item" url="{{toHistory}}" open-type="navigate">
+      <!-- 后续要改为导航栏，才可以跳转 -->
+      <image class="btn-img" src="{{bimgA}}" mode="heightFix"></image>
+      <text class="btn-name">历史记录</text>
+    </navigator>
+  </view>
+</view>

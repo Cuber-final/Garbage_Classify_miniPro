@@ -1,0 +1,45 @@
+{
+    "pages": [
+        "pages/home/index",
+        "pages/userCenter/index",
+        "pages/userCenter/history",
+        "pages/search/idnex",
+        "pages/userCenter/docs"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#90be6d",
+        "navigationBarTitleText": "垃圾分类小助手",
+        "navigationBarTextStyle": "white"
+    },
+
+    "tabBar": {
+        "backgroundColor": "#577590",
+        "selectedColor": "#f8961e",
+        "color": "#f8f8f8",
+        "list": [{
+                "pagePath": "pages/home/index",
+                "text": "主页",
+                "selectedIconPath": "/images/shome.png",
+                "iconPath": "/images/home.png"
+            },
+
+            {
+                "pagePath": "pages/search/idnex",
+                "selectedIconPath": "/images/sall.png",
+                "iconPath": "/images/all.png",
+                "text": "知识库"
+
+            }, {
+                "pagePath": "pages/userCenter/index",
+                "selectedIconPath": "/images/suser.png",
+                "iconPath": "/images/user.png",
+                "text": "用户中心"
+            }
+
+        ]
+    },
+
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}
