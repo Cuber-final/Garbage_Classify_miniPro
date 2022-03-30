@@ -4,6 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import *
 from django.contrib.auth import authenticate
+from utils.portDict import InputCates
 
 
 class UserLogin(APIView):
@@ -27,27 +28,38 @@ class Register(APIView):
         data = request.data
         username = data['user']
         password = data['psw']
-        fb_code = 1
+        fb_code = 0
         fb_msg = ['The user already exists', 'register success']
         # 先查询是否已有，没有再创建
-        user = TcUser.objects.get(username=username)
-        if user:
-            fb_code = 0
-        else:
-            user = TcUser.objects.creat(
-                username=username,
-                password=password
-            )
+        try:
+            user = TcUser.objects.get(username=username)
+        except TcUser.DoesNotExist:
+            fb_code = 1
+            # 信息不存在报异常，在此处处理添加用户，使用下面注释的方法只会存储明文的密码不会加密，我的理解是
+            '''
+            
+            newUser = TcUser()
+            newUser.username = username
+            newUser.password = password
+            newUser.save()
+            '''
+            TcUser.objects.create_user(username=username, password=password)
         msg = fb_msg[fb_code]
         return Response({'fb_msg': msg})
 
 
 class theIndex(APIView):
     def get(self, request):
-        return Response("hello world")
+        return Response("hello world,this is the home page of my system")
 
 
 class showIndex(APIView):
     def get(self, request):
         print("redirect to index")
         return redirect("api:index")
+
+
+class utilApi(APIView):
+    def get(self, request):
+        InputCates()
+        return Response("success add cate data")

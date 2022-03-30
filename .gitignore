@@ -1,1 +1,2 @@
 gc_backend/settings.py
+myDb.sqlite3
