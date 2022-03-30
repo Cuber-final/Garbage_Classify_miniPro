@@ -2,6 +2,7 @@ import django
 import json
 import os
 from wx.models import TcCate
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'gc_backend.settings')
 django.setup()
 dir_path = os.path.join("D:\\Django_dvn\\gc_backend\\utils", "cates.json")
@@ -39,6 +40,22 @@ def InputCates():
         # print(key + " : " + data[key])
         # print("id : {} name : {} pid : {} par_name : {}".format(class_id, class_str, parent_id, parent_str))
         TcCate.objects.create(tc_id=class_id, tc_name=class_str, tc_parent_id=parent_id)
+
+
+def PcIdentify(parent_name):
+    pc_name = ['其他垃圾', '厨余垃圾', '可回收物', '有害垃圾']
+    id_dict = [40, 41, 42, 43]
+    parent_id=40
+    if (parent_name == pc_name[0]):
+        parent_id = id_dict[0]
+    if (parent_name == pc_name[1]):
+        parent_id = id_dict[1]
+    if (parent_name == pc_name[2]):
+        parent_id = id_dict[2]
+    if (parent_name == pc_name[3]):
+        parent_id = id_dict[3]
+    return parent_id
+
 
 if __name__ == '__main__':
     InputCates()
