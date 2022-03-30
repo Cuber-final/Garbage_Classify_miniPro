@@ -13,10 +13,10 @@
         <image class="icons" src="{{icon_camera}}" mode="heightFix"></image>
         <view class="text-box">照相</view>
       </view>
-      <view class="card">
+      <navigator class="card" url="{{tab_two}}" open-type="switchTab">
         <image class="icons" src="{{icon_search}}" mode="heightFix"></image>
         <view class="text-box">搜索</view>
-      </view>
+      </navigator>
     </view>
   </view>
 </view>

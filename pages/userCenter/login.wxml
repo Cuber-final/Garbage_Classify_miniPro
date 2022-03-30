@@ -1,0 +1,27 @@
+<!--pages/userCenter/login.wxml-->
+<view class="container">
+  <view class="avatar-box">
+    <view class="card">
+      <image class="icons" src="{{avatar}}" mode="heightFix"></image>
+    </view>
+  </view>
+  <view class="login-box">
+    <form bindsubmit="formSubmit" bindreset="formReset" class="login-form">
+      <view class="form-main">
+        <view class="input-style">
+          <label>用户名|</label>
+          <input type="text" placeholder="请输入用户名" name="input_username" />
+        </view>
+        <view class="input-style">
+          <label>密码|</label>
+          <input type="text" password="true" placeholder="请输入密码" name="input_password" />
+        </view>
+      </view>
+      <view class="form-submit">
+        <button formType="submit" id="login-btn">登录</button>
+        <button formType="reset" id="reset-btn">重置</button>
+        <button formType="submit" id="register-btn">注册</button>
+      </view>
+    </form>
+  </view>
+</view>

@@ -1,5 +1,5 @@
 <!--pages/userCenter/index.wxml-->
-<view class="container" style="width: 750rpx; display: flex; box-sizing: border-box">
+<view class="container">
   <view class="avatar-box">
     <view class="card">
       <image class="icons" src="{{avatar}}" mode="heightFix"></image>

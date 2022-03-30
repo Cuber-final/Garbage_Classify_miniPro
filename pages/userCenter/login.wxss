@@ -1,0 +1,97 @@
+/* pages/userCenter/login.wxss */
+/* pages/userCenter/index.wxss */
+.avatar-box {
+  height: 300rpx;
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: cadetblue;
+}
+
+
+.card {
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .icons {
+  height: 160rpx;
+  width: 160rpx;
+}
+
+
+.login-box {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box .login-form {
+  display: flex;
+  flex-direction: column;
+  margin: auto auto;
+  height: 100%;
+}
+
+.form-main {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120rpx;
+}
+
+.form-main .input-style {
+  height: 100rpx;
+  width: 500rpx;
+  margin-top: 50rpx;
+  border-radius: 10rpx;
+  border-style: solid;
+  border-color: #577590;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-style label {
+  flex: 1;
+  font-size: 30rpx;
+  text-align: right;
+  margin-right: 10rpx;
+}
+
+.input-style input {
+  flex: 3;
+  height: 100%;
+}
+
+.form-submit {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-submit button {
+  flex: 1;
+  margin: 30rpx 20rpx;
+  width: 200rpx;
+  height: 100%;
+}
+
+#login-btn{
+  color:#90be6d ;
+}
+#register-btn{
+  color: #f8961e;
+}

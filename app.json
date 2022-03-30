@@ -2,6 +2,7 @@
     "pages": [
         "pages/home/index",
         "pages/userCenter/index",
+        "pages/userCenter/login",
         "pages/search/idnex"
     ],
 
