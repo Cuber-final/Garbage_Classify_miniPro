@@ -21,7 +21,7 @@
         },
         {
           "name": "文本搜索分类",
-          "pathName": "pages/search/idnex",
+          "pathName": "pages/search/index",
           "query": "",
           "launchMode": "default",
           "scene": null
@@ -36,6 +36,13 @@
         {
           "name": "注册",
           "pathName": "pages/userCenter/login",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "搜索结果",
+          "pathName": "explore/pages/result/index",
           "query": "",
           "scene": null,
           "launchMode": "default"

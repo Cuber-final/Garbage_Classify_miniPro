@@ -3,7 +3,7 @@
         "pages/home/index",
         "pages/userCenter/index",
         "pages/userCenter/login",
-        "pages/search/idnex"
+        "pages/search/index"
     ],
 
     "subPackages": [
@@ -11,7 +11,8 @@
             "root": "explore",
             "pages": [
                 "pages/history/index",
-                "pages/docs/index"
+                "pages/docs/index",
+                "pages/result/index"
             ]
         }
     ],
@@ -35,10 +36,10 @@
             },
 
             {
-                "pagePath": "pages/search/idnex",
+                "pagePath": "pages/search/index",
                 "selectedIconPath": "/images/sall.png",
                 "iconPath": "/images/all.png",
-                "text": "知识库"
+                "text": "指南"
 
             }, {
                 "pagePath": "pages/userCenter/index",

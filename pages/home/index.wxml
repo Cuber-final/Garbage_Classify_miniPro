@@ -7,16 +7,16 @@
   </swiper>
   <image class="bg-img" src="{{bgImage}}" mode="aspectFill"></image>
 
-  <view class="main" style="width: 750rpx; height: 758rpx; display: flex; box-sizing: border-box">
-    <view id="toolsbox">
-      <view class="card">
-        <image class="icons" src="{{icon_camera}}" mode="heightFix"></image>
-        <view class="text-box">照相</view>
-      </view>
-      <navigator class="card" url="{{tab_two}}" open-type="switchTab">
-        <image class="icons" src="{{icon_search}}" mode="heightFix"></image>
-        <view class="text-box">搜索</view>
-      </navigator>
+  <view class="main">
+    <view class="card">
+      <image class="icons" src="{{icon_camera}}" mode="heightFix"></image>
+      <view class="text-box">拍照识别</view>
     </view>
+    <view id="inputBar">
+      <image id="submit-btn" src="{{icon_search}}" bindtap="toSearch"></image>
+      <input type="text" placeholder="文字搜索" bindinput="inputListener" value="{{search_info}}"/>
+      <image id="reset-btn" src="{{icon_reset}}" bindtap="resetInput"></image>
+    </view>
+    <view id="footer"></view>
   </view>
 </view>

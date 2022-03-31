@@ -1,12 +1,19 @@
 /**index.wxss**/
-.swiper-container{
+.swiper-container {
   width: 100%;
   height: 350rpx;
-  flex: 0 0 auto;
   opacity: 0.6;
 }
 
-.bg-img{
+.main {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bg-img {
   position: absolute;
   top: 0;
   left: 0;
@@ -15,30 +22,54 @@
   z-index: -1;
 }
 
-#toolsbox{
-  display: flex;
-  height: 300rpx;
-  width: 100%;
-  flex-direction: row;
-  margin-top: 25%;
 
-}
-.card{
+.card {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.card .icons{
-  flex: 2;
+
+.card .icons {
+  height: 160rpx;
+  width: 160rpx;
 }
 
 .card .text-box{
+  color: #ffffff;
+}
+
+
+
+#footer{
   flex: 1;
-  font-size: 36rpx;
-  margin-top: 20rpx;
-  font-style: normal;
-  font-weight: bold;
-  color: #90be6d;
+}
+
+#inputBar {
+  width: 100%;
+  height: 80rpx;
+  background-color: #ffffff;
+  border-radius: 40rpx;
+  display: flex;
+}
+
+
+#inputBar input{
+  line-height: 80rpx;
+  height: 100%;
+  font-size: 30rpx;
+  flex: 1;
+  margin-left: 20rpx;
+}
+#inputBar #submit-btn{
+  height: 80rpx;
+  width: 80rpx;
+}
+
+#inputBar #reset-btn{
+  height: 70rpx;
+  width: 70rpx;
+  margin-top: 5rpx;
+  margin-right: 4rpx;
 }

@@ -1,0 +1,14 @@
+<!--pages/search/index.wxml-->
+<view class="container">
+  <view class="scroll-view-container">
+    <scroll-view class="left-scroller" scroll-y="true">
+      <view class="left-scroller-item {{active===idx? 'active':''}}" bindtap="changeActive" data-id="{{idx}}" data-tcId="{{item.tcId}}" wx:for="{{pc_set}}" wx:key="idx" wx:for-index="idx">{{item.tcName}}</view>
+    </scroll-view>
+    <scroll-view class="right-scroller" scroll-y="true" style="height: 100%">
+      <block wx:for="{{tc_set}}" wx:key="tc_idx" wx:for-index="tc_idx">
+        <view class="right-scroller-item">{{item.tcName}}</view>
+        <view class="line"></view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

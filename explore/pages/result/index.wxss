@@ -1,0 +1,41 @@
+.head{
+  height: 300rpx;
+  width: 100%;
+  background-color: cadetblue;
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: bold;
+  justify-content: center;
+  line-height: 300rpx;
+}
+
+.main{
+  float: 1;
+  width: 100%;
+  height: 100%;
+  background-color: burlywood;
+  display: flex;
+}
+.tip-box{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx
+}
+
+.tip-box image{
+  height: 280rpx;
+  width: 280rpx;
+}
+
+.tip-box text{
+  background-color: #ffffff;
+  flex: 1;
+  width: 100%;
+}
+.result-detail{
+  flex: 1;
+  width: 100%;
+}

@@ -1,10 +1,19 @@
 <!--pages/userCenter/index.wxml-->
 <view class="container">
   <view class="avatar-box">
-    <view class="card">
-      <image class="icons" src="{{avatar}}" mode="heightFix"></image>
-      <view class="text-box">{{wx_name}}</view>
-    </view>
+    <!-- 若状态为游客或空，则可以通过点击头像进入登录注册页面 -->
+    <block wx:if="{{use_status!='user'}}">
+      <navigator class="card" url="{{toLogin}}" open-type="navigate">
+        <image class="icons" src="{{avatar}}" mode="heightFix"></image>
+        <view class="text-box">{{wx_name}}</view>
+      </navigator>
+    </block>
+    <block wx:if="{{use_status=='user'}}">
+      <view class="card">
+        <image class="icons" src="{{avatar}}" mode="heightFix"></image>
+        <view class="text-box">{{wx_name}}</view>
+      </view>
+    </block>
   </view>
   <view class="grid-list">
     <navigator class="grid-item" url="{{toHistory}}" open-type="navigate">

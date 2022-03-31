@@ -2,7 +2,7 @@
 App({
 
   globals: {
-    user_name: "user",
+    user_name: "用户",
     stat1: "empty",
     stat2: "visitor",
     stat3: "user"
@@ -26,7 +26,7 @@ App({
             })
           } else if (res.cancel) {
             console.log('进入游客模式')
-            wx.setStorageSync('username', 'visitor')
+            wx.setStorageSync('username', '游客')
             wx.setStorageSync('use_status', that.globals.stat2)
           }
         }
@@ -37,17 +37,12 @@ App({
   onLaunch(options) {
     // 不能一次存多个不同的键值对
     try {
-      wx.setStorageSync('username', '用户')
+      wx.setStorageSync('username', '请登录')
     } catch (e) {
       console.log("用户信息设置错误");
     };
-
-    try {
-      wx.setStorageSync('use_status', "empty")
-    } catch (e) {
-      console.log("使用身份设置错误");
-    };
+    wx.setStorageSync('use_status', "visitor")
     // 设置延时弹窗提示
-    setTimeout(this.hint_login, 2000)
+    //setTimeout(this.hint_login, 2000)
   },
 })

@@ -9,10 +9,11 @@ Page({
     bimgA: "https://cdn.jsdelivr.net/gh/Cuber-final/myblog_statics@master/mini_pro/history.1r170mg6lu1.webp",
     bimgB: "https://cdn.jsdelivr.net/gh/Cuber-final/myblog_statics@master/mini_pro/notes.3gsxfncueww0.webp",
     avatar: "https://cdn.jsdelivr.net/gh/Cuber-final/myblog_statics@master/mini_pro/user.1xn7dwcjf000.webp",
-    toHistory: "",
-    wx_name: "",
+    wx_name: '',
     toHistory: "/explore/pages/history/index",
-    toDocs: "/explore/pages/docs/index"
+    toDocs: "/explore/pages/docs/index",
+    toLogin:"/pages/userCenter/login",
+    use_status: ''
   },
 
   /**
@@ -21,56 +22,28 @@ Page({
   onLoad: function (options) {
     try {
       var value = wx.getStorageSync('username')
+      var stat = wx.getStorageSync('use_status')
       // console.log(value)
       this.setData({
-        wx_name: value
+        wx_name: value,
+        use_status: stat
       })
     } catch (e) {}
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {},
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  onShow: function () {
+    try {
+      var value = wx.getStorageSync('username')
+      var stat = wx.getStorageSync('use_status')
+      // console.log(value)
+      this.setData({
+        wx_name: value,
+        use_status: stat
+      })
+    } catch (e) {}
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

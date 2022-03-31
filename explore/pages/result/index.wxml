@@ -1,0 +1,16 @@
+<!--explore/pages/result/index.wxml-->
+<view class="container">
+  <view class="head">{{result.msg}}</view>
+  <view class="main">
+    <block wx:if="{{result.code==1}}">
+      <view class="result-detail">
+        <view>名称：{{result.name}}</view>
+        <view>所属分类：{{result.pc_name}}</view>
+      </view>
+      <view class="tip-box">
+        <image src=" {{img_url}}"></image>
+        <text>一些垃圾分类常识内容</text>
+      </view>
+    </block>
+  </view>
+</view>
