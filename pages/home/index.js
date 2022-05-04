@@ -1,12 +1,15 @@
 // index.js
 Page({
   data: {
-    bgImage: "https://cdn.jsdelivr.net/gh/Cuber-final/myblog_statics@master/backGround.63auyo6meuk0.webp",
+    bgImage: "https://cdn.jsdelivr.net/gh/Cuber-final/myblog_statics@master/mini_pro/homeBg.kxydtlsdm3k.webp",
     icon_camera: "https://cdn.jsdelivr.net/gh/Cuber-final/myblog_statics@master/mini_pro/camera.2fh3b8wvhtz4.webp",
     icon_search: "https://cdn.jsdelivr.net/gh/Cuber-final/myblog_statics@master/mini_pro/search.16og5blts6io.webp",
     icon_reset: "https://cdn.jsdelivr.net/gh/Cuber-final/myblog_statics@master/mini_pro/rb.3ddr0cwe94u0.webp",
     tab_two: "/pages/search/index",
     search_info: "",
+    postA: "https://cdn.jsdelivr.net/gh/Cuber-final/myblog_statics@master/mini_pro/postA.webp",
+    postB: "https://cdn.jsdelivr.net/gh/Cuber-final/myblog_statics@master/mini_pro/postC.webp",
+    postC: "https://cdn.jsdelivr.net/gh/Cuber-final/myblog_statics@master/mini_pro/class_demo.webp"
   },
 
   onShow: function (params) {
@@ -14,21 +17,59 @@ Page({
       search_info: ""
     })
   },
+
   toSearch: function (e) {
     var stat = wx.getStorageSync('use_status')
     // console.log(this.data.search_info);
     var info = this.data.search_info
+    var host = wx.getStorageSync('hostIp')
+    var username = wx.getStorageSync('username')
     wx.request({
-      url: 'http://127.0.0.1:4093/api/search/text',
+      url: host + '/api/search/text',
       method: 'POST',
       data: {
         'stat': stat,
-        'content': info
+        'content': info,
+        'username': username
       },
       success(res) {
         wx.setStorageSync('result', res.data)
         wx.navigateTo({
           url: '/explore/pages/result/index',
+        })
+      }
+    })
+  },
+
+  camera: function () {
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success(res) {
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePaths = res.tempFilePaths
+        var host = wx.getStorageSync('hostIp')
+        // console.log(tempFilePaths);
+        wx.uploadFile({
+          url: host + '/api/search/camera',
+          filePath: tempFilePaths[0],
+          name: 'file',
+          method: 'POST',
+          formData: {
+            // 设置用户
+            'username': 'userB',
+          },
+          success(res) {
+            // console.log(res);
+            var data=JSON.parse(res.data)
+            // console.log(data);
+            wx.setStorageSync('result', data)
+            // setTimeout(() => {}, 6000);
+            wx.navigateTo({
+              url: '/explore/pages/result/index',
+            })
+          }
         })
       }
     })

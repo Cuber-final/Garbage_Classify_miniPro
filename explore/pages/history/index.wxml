@@ -1,2 +1,18 @@
 <!--explore/pages/history/index.wxml-->
-<text>explore/pages/history/index.wxml</text>
+<view class="container">
+  <view class="head">{{res_msg}}</view>
+  <view class="main">
+    <view class="scroll-view-container">
+      <scroll-view class="scroller" scroll-y="true" style="height: 100%">
+        <block wx:for="{{res_list}}" wx:if="{{idx>=2}}" wx:key="idx" wx:for-index="idx">
+          <view class="scroller-item">
+            <text class="textA">{{item.pcName}}</text>
+            <text class="textB">{{item.seaInfo}}</text>
+            <text class="textC">{{item.seaTime}}</text>
+          </view>
+          <view class="line"></view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+</view>

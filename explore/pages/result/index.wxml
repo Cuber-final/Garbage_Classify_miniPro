@@ -4,12 +4,36 @@
   <view class="main">
     <block wx:if="{{result.code==1}}">
       <view class="result-detail">
-        <view>名称：{{result.name}}</view>
-        <view>所属分类：{{result.pc_name}}</view>
+        <text>名称：</text>
+        <view>{{result.name}}</view>
+        <text>所属分类：</text>
+        <view>{{result.pc_name}}</view>
       </view>
       <view class="tip-box">
         <image src=" {{img_url}}"></image>
-        <text>一些垃圾分类常识内容</text>
+        <view class="text-container">
+          <block wx:if="{{result.pc_name=='可回收物'}}">
+            <text>可回收物：废纸张、废塑料、废玻璃制品、废金属、废织物等适宜回收、可循环利用的生活废弃物</text>
+            <text>主要包括：酱油瓶、玻璃瓶、平板玻璃、易拉罐、饮料瓶、洗发水瓶、塑料玩具、书本、报纸、广告单、纸板箱、衣服、床上用品等</text>
+            <text>投放要求：轻投轻放。清洁干燥，避免污染，费纸尽量平整立体包装物请清空内容物，清洁后压扁投放。有尖锐边角的、应包裹后投放</text>
+          </block>
+
+          <block wx:if="{{result.pc_name=='厨余垃圾'}}">
+            <text>厨余垃圾也叫湿垃圾：日常生活垃圾产生的容易腐烂的生物质废弃物</text>
+            <text>主要包括：剩菜剩饭、瓜皮果核、花芬绿植、过期食品等</text>
+            <text>投放要求：纯流质的食物垃圾、如牛奶等，应直接倒进下水口。有包装物的湿垃圾应将包装物去除后分类投放、包装物请投放到对应的可回收物或干垃圾容器</text>
+          </block>
+          <block wx:if="{{result.pc_name=='有害垃圾'}}">
+            <text>有害垃圾：废电池、废灯管、废药品、废油漆及其容器等对人体健康或者自然环境造成直接或者潜在危害的生活废弃物</text>
+            <text>主要包括：废电池、油漆桶、荧光灯管、废药品及其包装物等</text>
+            <text>投放要求：投放时请注意轻放。易破损的请连带包装或包裹后轻放。如易挥发，请密封后投放</text>
+          </block>
+          <block wx:if="{{result.pc_name=='其他垃圾'}}">
+            <text>其他垃圾也叫干垃圾：除可回收物、有害垃圾、湿垃圾以外的其它生活废弃物</text>
+            <text>主要包括：餐盒、餐巾纸、湿纸巾、卫生间用纸、塑料袋、食品包装袋、污染严重的纸、烟蒂、纸尿裤、一次性杯子、大骨头、贝壳、花盆、陶瓷等</text>
+            <text>投放要求：尽量沥干水分。难以辨识类别的生活垃圾投入干垃圾容器内</text>
+          </block>
+        </view>
       </view>
     </block>
   </view>

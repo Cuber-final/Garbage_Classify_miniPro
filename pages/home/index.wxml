@@ -1,15 +1,15 @@
 <!--index.wxml-->
 <view class="container">
   <swiper class="swiper-container" indicator-dots="true" autoplay="true" easing-function="easeOutCubic">
-    <swiper-item id="sw-it1" class="item" style="background-color: brown;">A</swiper-item>
-    <swiper-item class="item" style="background-color: goldenrod;">A</swiper-item>
-    <swiper-item class="item" style="background-color: grey;">A</swiper-item>
+    <swiper-item id="sw-it1" class="item"><image src="{{postA}}"></image></swiper-item>
+    <swiper-item class="item"><image src="{{postB}}"></image></swiper-item>
+    <swiper-item class="item"><image src="{{postC}}"></image></swiper-item>
   </swiper>
   <image class="bg-img" src="{{bgImage}}" mode="aspectFill"></image>
 
   <view class="main">
     <view class="card">
-      <image class="icons" src="{{icon_camera}}" mode="heightFix"></image>
+      <image class="icons" src="{{icon_camera}}" mode="heightFix" bindtap="camera"></image>
       <view class="text-box">拍照识别</view>
     </view>
     <view id="inputBar">

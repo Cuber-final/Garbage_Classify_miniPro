@@ -1,4 +1,4 @@
-.head{
+.head {
   height: 300rpx;
   width: 100%;
   background-color: cadetblue;
@@ -9,33 +9,57 @@
   line-height: 300rpx;
 }
 
-.main{
+.main {
   float: 1;
   width: 100%;
   height: 100%;
-  background-color: burlywood;
+  background-color: #f1f1f1;
   display: flex;
 }
-.tip-box{
-  flex: 1;
+
+.tip-box {
+  flex: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 30rpx
+  font-size: 34rpx
 }
 
-.tip-box image{
+.tip-box image {
   height: 280rpx;
   width: 280rpx;
 }
 
-.tip-box text{
+.tip-box .text-container {
+  flex: 1;
   background-color: #ffffff;
-  flex: 1;
-  width: 100%;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
 }
-.result-detail{
+
+.tip-box .text-container text {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20rpx;
+  font-size: 34rpx;
+}
+
+.result-detail {
   flex: 1;
   width: 100%;
+  margin-top: 160rpx;
+}
+
+.result-detail text {
+  font-weight: bold;
+  font-size: 40rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.result-detail view {
+  margin-top: 20rpx;
+  text-align: center;
 }

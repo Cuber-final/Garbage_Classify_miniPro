@@ -1,1 +1,63 @@
 /* explore/pages/history/index.wxss */
+.head {
+  height: 300rpx;
+  width: 100%;
+  background-color: cadetblue;
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: bold;
+  justify-content: center;
+  line-height: 300rpx;
+}
+
+.main {
+  float: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #f1f1f1;
+  display: flex;
+}
+
+.scroll-view-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+
+.scroller{
+  height: 100%;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+.scroller .scroller-item{
+  background-color: #ffffff;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 12px;
+  width: 100%;
+}
+
+.scroller .line{
+  color: #577590;
+  height: 6px;
+}
+
+.scroller-item {
+  display: flex;
+}
+
+.scroller-item text{
+  font-size: 30rpx;
+}
+.scroller-item .textA{
+flex: 1;
+}
+.scroller-item .textB{
+  flex: 1;
+}
+.scroller-item .textC{
+  flex: 2;
+}

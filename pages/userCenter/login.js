@@ -13,11 +13,12 @@ Page({
     // console.log(username)
     var password = form_data["input_password"]
     // console.log(password)
+    var host = wx.getStorageSync('hostIp')
     if (btn_id == "login-btn") {
       console.log("login");
       wx.request({
         method: 'POST',
-        url: 'http://127.0.0.1:4093/api/login',
+        url: host + '/api/user/login',
         data: {
           "username": username,
           "password": password
@@ -48,7 +49,7 @@ Page({
       console.log("register");
       wx.request({
         method: 'POST',
-        url: 'http://127.0.0.1:4093/api/register',
+        url: host + '/api/user/register',
         data: {
           "username": username,
           "password": password

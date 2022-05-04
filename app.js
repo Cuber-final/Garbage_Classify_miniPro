@@ -5,7 +5,7 @@ App({
     user_name: "用户",
     stat1: "empty",
     stat2: "visitor",
-    stat3: "user"
+    stat3: "user",
   },
 
 
@@ -42,6 +42,8 @@ App({
       console.log("用户信息设置错误");
     };
     wx.setStorageSync('use_status', "visitor")
+    wx.setStorageSync('hostIp', 'http://192.168.43.231:4093')
+    //wx.setStorageSync('hostIp', 'http://127.0.0.1:4093')
     // 设置延时弹窗提示
     //setTimeout(this.hint_login, 2000)
   },

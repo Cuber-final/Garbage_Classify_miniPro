@@ -12,7 +12,7 @@ Page({
     wx_name: '',
     toHistory: "/explore/pages/history/index",
     toDocs: "/explore/pages/docs/index",
-    toLogin:"/pages/userCenter/login",
+    toLogin: "/pages/userCenter/login",
     use_status: ''
   },
 
@@ -46,4 +46,17 @@ Page({
     } catch (e) {}
   },
 
+  access: function (params) {
+    if (this.data.use_status == 'visitor') {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none',
+        duration: 1500,
+      })
+    } else {
+      wx.navigateTo({
+        url: this.data.toHistory,
+      })
+    }
+  }
 })

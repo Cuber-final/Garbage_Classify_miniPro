@@ -1,6 +1,5 @@
 // explore/pages/result/index.js
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -15,16 +14,16 @@ Page({
    */
   onLoad: function (options) {
     var result = wx.getStorageSync('result')
+    // console.log(result);
     this.setData({
       result: result
     })
-
     var img_url = this.data.cateImg + result['pc_name'] + '.webp'
     this.setData({
       img_url: img_url
     })
+    // console.log(result);
   },
-
   /**
    * 退出该页面时删除对应的搜索记录缓存
    */

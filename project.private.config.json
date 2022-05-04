@@ -44,6 +44,13 @@
           "name": "搜索结果",
           "pathName": "explore/pages/result/index",
           "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "历史记录浏览",
+          "pathName": "explore/pages/history/index",
+          "query": "",
           "scene": null,
           "launchMode": "default"
         }

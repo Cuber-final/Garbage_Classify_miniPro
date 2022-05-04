@@ -13,8 +13,9 @@ Page({
 
   onLoad: function (options) {
     var that = this
+    var host=wx.getStorageSync('hostpIp')
     wx.request({
-      url: 'http://127.0.0.1:4093/api/search/getCates',
+      url: host+'/api/search/getCates',
       method: 'GET',
       success(res) {
         // console.log(res.data)
@@ -30,8 +31,9 @@ Page({
 //重新回到该页时会保证最新数据
   onShow: function () {
     var that = this
+    var host=wx.getStorageSync('hostIp')
     wx.request({
-      url: 'http://127.0.0.1:4093/api/search/getCates',
+      url: host+'/api/search/getCates',
       method: 'GET',
       success(res) {
         // console.log(res.data)
@@ -58,9 +60,10 @@ Page({
 
   getCateList: function () {
     var that = this
+    var host=wx.getStorageSync('hostIp')
     // console.log(that.data.active_id);
     wx.request({
-      url: 'http://127.0.0.1:4093/api/search/getCates',
+      url: host+'/api/search/getCates',
       method: 'POST',
       data: {
         "tcId": that.data.active_id

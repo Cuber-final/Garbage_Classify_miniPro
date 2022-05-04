@@ -12,7 +12,8 @@
             "pages": [
                 "pages/history/index",
                 "pages/docs/index",
-                "pages/result/index"
+                "pages/result/index",
+                "pages/result/usecame"
             ]
         }
     ],
