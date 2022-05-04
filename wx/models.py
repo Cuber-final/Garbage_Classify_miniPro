@@ -29,7 +29,7 @@ class UserManager(BaseUserManager):
 class TcUser(AbstractBaseUser, PermissionsMixin):
     userId = models.AutoField(primary_key=True)
     username = models.CharField(max_length=32, unique=True, verbose_name='用户名')
-    password = models.CharField(max_length=32, verbose_name='密码')
+    password = models.CharField(max_length=255, verbose_name='密码')
     is_staff = models.BooleanField(verbose_name="是否是员工", default=False)
     is_superuser = models.BooleanField(verbose_name="是否是超级管理员", default=False)
     USERNAME_FIELD = 'username'

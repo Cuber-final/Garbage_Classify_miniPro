@@ -1,5 +1,4 @@
-from rest_framework.parsers import JSONParser
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import *
@@ -47,13 +46,6 @@ class Register(APIView):
             TcUser.objects.create_user(username=username, password=password)
         msg = fb_msg[fb_code]
         return Response({'fb_msg': msg})
-
-
-# 拍照识别
-class CameraRec(APIView):
-    def get(self, request):
-        dic = {0: "str1", 1: "str2"}
-        return Response(dic)
 
 
 # 文字输入搜索垃圾所属种类
@@ -167,27 +159,45 @@ class GetHistory(APIView):
         username = 'userB'
         userId = TcUser.objects.get(username=username).userId
         sea_list = []
-        sea_dict = {}
         infos = TcSearch.objects.filter(sea_user_id=userId)
+        if len(infos) == 0:
+            sea_list.append({'code': 0})
+            sea_list.append({'msg': '该用户无历史记录'})
+            return Response(sea_list)
+
+        sea_list.append({'code': 1})
+        sea_list.append({'msg': 'success'})
         for info in infos:
+            sea_dict = {}
             pid = TcCate.objects.get(tc_id=info.sea_cate_id).tc_parent_id
             pcName = TcCate.objects.get(tc_id=pid).tc_name
             sea_dict['seaInfo'] = info.sea_info
             sea_dict['pcName'] = pcName
+            sea_dict['seaTime'] = info.sea_time.strftime("%Y-%m-%d, %H:%M")
             sea_list.append(sea_dict)
+        # print(sea_list[0]['code'])
         return Response(sea_list)
 
     def post(self, request):
         username = request.data['username']
         userId = TcUser.objects.get(username=username).userId
         sea_list = []
-        sea_dict = {}
         infos = TcSearch.objects.filter(sea_user_id=userId)
+
+        if len(infos) == 0:
+            sea_list.append({'code': 0})
+            sea_list.append({'msg': '该用户无历史记录'})
+            return Response(sea_list)
+
+        sea_list.append({'code': 1})
+        sea_list.append({'msg': 'success'})
         for info in infos:
+            sea_dict = {}
             pid = TcCate.objects.get(tc_id=info.sea_cate_id).tc_parent_id
             pcName = TcCate.objects.get(tc_id=pid).tc_name
             sea_dict['seaInfo'] = info.sea_info
             sea_dict['pcName'] = pcName
+            sea_dict['seaTime'] = info.sea_time.strftime("%Y-%m-%d, %H:%M")
             sea_list.append(sea_dict)
         return Response(sea_list)
 
